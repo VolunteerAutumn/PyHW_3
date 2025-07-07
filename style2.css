@@ -1,0 +1,49 @@
+.HEAH {
+	width: 1700px;
+	height: 560px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	perspective: 1200px;
+}
+
+.curtain {
+	width: 840px;
+	height: 550px;
+	border: solid 10px #651142;
+	background-color: #872d62;
+	box-sizing: border-box;
+	position: relative;
+	z-index: 2;
+	transform: rotateY(0deg);
+	transition: none;
+}
+
+.HEAH:hover .curtain {
+	transition: transform 2s ease-in-out;
+}
+
+.left_curtain {
+	transform-origin: left center;
+}
+.right_curtain {
+	transform-origin: right center;
+}
+
+.HEAH:hover .left_curtain {
+	transform: rotateY(60deg);
+}
+.HEAH:hover .right_curtain {
+	transform: rotateY(-60deg);
+}
+
+.centered {
+	position: absolute;
+	font-family: sans-serif;
+	font-weight: bold;
+	color: black;
+	font-size: 48px;
+	transition: opacity 1.5s ease 0.5s;
+	z-index: 1;
+}
