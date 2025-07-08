@@ -1,1 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Made In Heaven Clock</title>
+	<link rel="stylesheet" type="text/css" href="style1.css">
+</head>
+<body>
+
+<button id="startButton">Begin Acceleration</button>
+
+<div class="zefirblat">
+	<div class="thatonedotinthecenter"></div>
+
+	<div class="minute-hand">
+		<div class="minutes"></div>
+	</div>
+
+	<div class="hour-hand">
+		<div class="hours"></div>
+	</div>
+
+	<div class="second-hand">
+		<div class="seconds"></div>
+	</div>
+</div>
+
+<audio id="crucified" src="img/crucified.mp3" type="audio/mpeg" loop></audio>
+
+<script>
+	let minuteAngle = 0;
+	let hourAngle = 0;
+	let secondAngle = 0;
+
+	let speed = 0.1;
+	let speedup = 1.003;
+
+	const minuteHand = document.querySelector('.minute-hand');
+	const hourHand = document.querySelector('.hour-hand');
+	const secondHand = document.querySelector('.second-hand');
+
+	const zefirblat = document.querySelector('.zefirblat');
+	const startButton = document.getElementById('startButton');
+	const audio = document.getElementById('crucified');
+
+	function updateHands() {
+		minuteHand.style.transform = `rotate(${minuteAngle}deg)`;
+		hourHand.style.transform = `rotate(${hourAngle}deg)`;
+		secondHand.style.transform = `rotate(${secondAngle}deg)`;
+
+		minuteAngle += speed;
+		hourAngle += speed / 60;
+		secondAngle += speed * 60;
+
+		speed *= speedup;
+
+		requestAnimationFrame(updateHands);
+	}
+
+	startButton.addEventListener('click', () => {
+		audio.play();
+		startButton.style.display = 'none';
+		zefirblat.style.display = 'block';
+		updateHands();
+	});
+</script>
+
+</body>
+</html>
 
