@@ -1,1 +1,77 @@
+body {
+	background-color: #000;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	margin: 0;
+	color: white;
+	font-family: monospace;
+	overflow: hidden;
+	background-image: url("img/PUCCI.jpg");
+}
+
+.zefirblat {
+	width: 500px;
+	height: 500px;
+	border: solid 5px #0b868b;
+	border-radius: 50%;
+	position: relative;
+	background-color: black;
+}
+
+.thatonedotinthecenter {
+	width: 17px;
+	height: 17px;
+	background-color: #0b868b;
+	border-radius: 50%;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	z-index: 3;
+}
+
+.minute-hand,
+.hour-hand,
+.second-hand {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	width: 0;
+	height: 0;
+	transform-origin: center;
+}
+
+.minutes {
+	width: 5px;
+	height: 200px;
+	background-color: #0b868b;
+	transform-origin: bottom center;
+	transform: translate(-50%, -100%);
+}
+
+.hours {
+	width: 5px;
+	height: 160px;
+	background-color: #0b868b;
+	transform-origin: bottom center;
+	transform: translate(-50%, -100%);
+}
+
+.seconds {
+	width: 2px;
+	height: 230px;
+	background-color: white;
+	transform-origin: bottom center;
+	transform: translate(-50%, -100%);
+}
+
+.speedometer {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+	text-align: center;
+	font-size: 18px;
+}
 
